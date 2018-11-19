@@ -1,3 +1,3 @@
 # Rolecall
 
-## Classroom attendance application for Android
+## Bluetooth classroom attendance application for Android
