@@ -27,9 +27,10 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var usernameEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var loginbutton: Button
-    private lateinit var signup: Button
+    private lateinit var signupbutton: Button
     private lateinit var saveUser: CheckBox
     private lateinit var savePassword: CheckBox
+    private lateinit var progress: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,10 +38,15 @@ class LoginActivity : AppCompatActivity() {
         // Get a SharedPreferences object
         val preferences = getSharedPreferences(PREF_FILENAME, Context.MODE_PRIVATE)
 
+        progress = findViewById(R.id.progressBar)
+        usernameEditText = findViewById(R.id.username)
+        passwordEditText = findViewById(R.id.password)
         loginbutton = findViewById(R.id.login)
-        signup = findViewById(R.id.signup)
+        signupbutton = findViewById(R.id.signup)
         saveUser = findViewById(R.id.remuser)
         savePassword = findViewById(R.id.rempass)
+
+        progress.visibility = View.INVISIBLE
 
         val isFirstRun = preferences.getBoolean("isFirstRun", true)
         if(isFirstRun){
@@ -54,6 +60,10 @@ class LoginActivity : AppCompatActivity() {
         }
         preferences.edit().putBoolean("isFirstRun",false).apply()
 
+        signupbutton.setOnClickListener {
+            val username = usernameEditText.text.toString()
 
+
+        }
     }
 }
