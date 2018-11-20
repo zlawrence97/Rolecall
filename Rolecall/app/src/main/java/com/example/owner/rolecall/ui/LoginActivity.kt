@@ -23,6 +23,7 @@ import java.util.*
 
 class LoginActivity : AppCompatActivity() {
 
+    private val PREF_FILENAME = "project-2-zlawrence97"
     private lateinit var usernameEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var loginbutton: Button
@@ -33,12 +34,25 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        // Get a SharedPreferences object
+        val preferences = getSharedPreferences(PREF_FILENAME, Context.MODE_PRIVATE)
 
         loginbutton = findViewById(R.id.login)
         signup = findViewById(R.id.signup)
         saveUser = findViewById(R.id.remuser)
         savePassword = findViewById(R.id.rempass)
 
+        val isFirstRun = preferences.getBoolean("isFirstRun", true)
+        if(isFirstRun){
+            AlertDialog.Builder(this)
+                .setTitle("Shabooya ROLECALL!")
+                .setMessage("A new app to keep attendance.")
+                .setPositiveButton("Let's Go"){
+                        dialog, id -> dialog.dismiss()
+                }
+                .show()
+        }
+        preferences.edit().putBoolean("isFirstRun",false).apply()
 
 
     }
