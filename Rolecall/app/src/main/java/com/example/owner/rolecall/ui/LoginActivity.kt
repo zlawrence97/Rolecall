@@ -63,7 +63,20 @@ class LoginActivity : AppCompatActivity() {
         signupbutton.setOnClickListener {
             val username = usernameEditText.text.toString()
 
+            /* TODO:
+             * If username is empty then launch intent
+             * Otherwise, verify userrname is not in db and send
+             * entered uesrname to Signup intent
+             */
+        }
 
+        loginbutton.setOnClickListener {
+            val username = usernameEditText.text.toString()
+            val password = passwordEditText.text.toString()
+
+            /* TODO:
+             * Credential verfication and send to checkin page
+             */
         }
     }
 }
