@@ -28,16 +28,29 @@
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:ems="10"
+                    android:hint="Email"
+                    android:id="@+id/email" android:layout_marginTop="@dimen/one"
+                    app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="@dimen/one"
+                    app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="@dimen/one"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="@dimen/one"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.251"
+                    app:layout_constraintVertical_bias="0.0"/>
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:ems="10"
                     android:hint="@string/newpass"
                     android:id="@+id/firstpass"
                     android:layout_marginStart="@dimen/one"
                     app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="@dimen/one"
-                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.231"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.251"
                     android:layout_marginBottom="@dimen/one" app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_marginTop="@dimen/one" app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.03"/>
+                    app:layout_constraintVertical_bias="0.236"/>
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -46,10 +59,11 @@
                     android:hint="@string/confirmpass"
                     android:id="@+id/confirmpass" app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="@dimen/one" app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginStart="@dimen/one" android:layout_marginTop="@dimen/one"
+                    android:layout_marginStart="@dimen/one"
                     android:layout_marginBottom="@dimen/one" app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/firstpass" app:layout_constraintHorizontal_bias="0.243"
-                    app:layout_constraintVertical_bias="0.072"/>
+                    app:layout_constraintHorizontal_bias="0.251"
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.465"/>
             <Button
                     android:text="@string/submit"
                     android:layout_width="wrap_content"
@@ -58,7 +72,7 @@
                     android:layout_marginBottom="@dimen/one"
                     app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="@dimen/one" app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginStart="@dimen/one" app:layout_constraintHorizontal_bias="0.745"
+                    android:layout_marginStart="@dimen/one" app:layout_constraintHorizontal_bias="0.758"
                     android:layout_marginTop="@dimen/one" app:layout_constraintTop_toBottomOf="@+id/classid"
                     app:layout_constraintVertical_bias="0.578"/>
 
@@ -72,8 +86,8 @@
                     app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="@dimen/one"
                     app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="@dimen/one"
                     app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="@dimen/one"
-                    app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.243"
-                    app:layout_constraintVertical_bias="0.583"/>
+                    app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.251"
+                    app:layout_constraintVertical_bias="0.725"/>
 
             <ProgressBar
                     style="?android:attr/progressBarStyleHorizontal"
