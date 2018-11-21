@@ -19,14 +19,18 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 
 import java.util.*
 
-class SignupActivity {
+class CheckinActivity {
 
     companion object {
         // ... because we want this constant to be shared with another class
-        val USERNAME = "GIVEN_USERNAME"
-        val PASSWORD = "GIVEN_PASSWORD"
+        val CRN = "CRN"
+        val USER = "USERNAME"
 
     }
 
-
+    /*
+     * TODO:
+     * Student - Search for available Nearby bluetooth signal
+     * Teacher - Start hub for bluetooth signin
+     */
 }
