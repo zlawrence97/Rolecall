@@ -3,7 +3,6 @@ package com.example.owner.rolecall.ui
 import com.example.owner.rolecall.R
 import android.content.Context
 import android.content.Intent
-import android.location.Address
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -75,21 +74,12 @@ class LoginActivity : AppCompatActivity() {
 
         signupbutton.setOnClickListener {
             progress.visibility = View.VISIBLE
-            val username = usernameEditText.text.toString()
-            val password = passwordEditText.text.toString()
 
             val intent = Intent(this, SignupActivity::class.java)
 
-            intent.putExtra(SignupActivity.USERNAME,username)
-            intent.putExtra(SignupActivity.PASSWORD,password)
-
             progress.visibility = View.INVISIBLE
             startActivity(intent)
-            /* TODO:
-             * If username is empty then launch intent
-             * Otherwise, verify username is not in db and send
-             * entered username to Signup intent
-             */
+
         }
 
         loginbutton.setOnClickListener {
@@ -108,10 +98,18 @@ class LoginActivity : AppCompatActivity() {
                     }
                     preferences.edit().putString(PREF_SAVED_USERNAME, username).apply()
                     // TODO: Send to Checkin Activity
-                    val intent = Intent(this, CheckinActivity::class.java)
-                    //intent.putExtra(CheckinActivity.CRN, user.)
-                    //intent.putExtra(CheckinActivity.USERNAME, user.)
+                    AlertDialog.Builder(this)
+                        .setTitle("SUCCESS")
+                        .setMessage("The Checkin activity would be launched if it was running :/")
+                        .setPositiveButton("Sad, but yay!"){
+                                dialog, id -> dialog.dismiss()
+                        }
+                        .show()
+                    /*val intent = Intent(this, CheckinActivity::class.java)
+                    intent.putExtra(CheckinActivity.CRN, user.)
+                    intent.putExtra(CheckinActivity.USERNAME, user.)
                     startActivity(intent)
+                    */
                 } else {
                     val exception = task.exception
                     val errorType = if (exception is FirebaseAuthInvalidCredentialsException)
