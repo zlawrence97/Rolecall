@@ -6,4 +6,6 @@
     <dimen name="four">32dp</dimen>
     <dimen name="six">48dp</dimen>
     <dimen name="eight">64dp</dimen>
+    <dimen name="nine">72dp</dimen>
+    <dimen name="ten">80dp</dimen>
 </resources>
